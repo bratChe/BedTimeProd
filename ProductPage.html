@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Bedtime Productions</title>
+<meta name="viewport" content="width=device-width, initial-scale=0.1">
+<style type = "text/css">
+body{
+background-image: url("backgroundStars.PNG");
+background-size: 100%;
+}
+header {
+  background-image: url("header.jpg");
+  padding: 30px;
+  text-align: left;
+  font-size: 35px;
+  color: white;
+
+}
+nav {
+
+  float:none;
+
+  height: 20px; /* only for demonstration, should be removed */
+  background: black;
+  padding: 25px;
+}
+ #logo
+    {
+     align-self: flex-start;
+     max-width:10%;
+     height:auto;
+    }
+    #pheader
+    {
+          float:center;
+    }
+#mission_statement{
+
+
+color: white;
+text-align: center;
+font-size: 16pt;
+
+}
+#content
+    {
+     display: block;
+     float: none;
+    }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 6px;
+  overflow: hidden;
+
+}
+li {
+  float: right;
+}
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 0px 20px;
+  text-decoration: none;
+    }
+ li a:hover:not(.active) {
+  background-color: gray;
+}
+.productlist{
+  float: left;
+}
+
+ section{
+
+  opacity: 0.8;
+
+  background-color: darkblue;
+  padding: 10%;
+  text-align: left;
+  color: white;
+    }
+
+  article {
+  text-align: left;
+  float: left;
+  opacity: 1;
+
+  background-color:black;
+  padding: 12%;
+  color: white;
+  text-align: start;
+
+  section:after {
+  content: "";
+  display: table;
+  clear: both;
+   }
+
+    }
+
+  footer {
+
+  background-color: black;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  opacity: 1;
+}
+  .pheader {
+    opacity: 0.8;
+    background-color: darkblue;
+  }
+.grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+}
+.productlist {
+  width: 50%;
+}
+
+.title{
+  opacity: 0.8;
+  background-color: darkblue;
+  text-align: center;
+  font-size: 18pt;
+  color: white;
+  padding: 10px;
+}
+
+
+}
+</style>
+</head>
+<body>
+  <header>
+        <img id="logo" src="Logo1.1.png" >
+
+  </header>
+  <nav>
+    <ul id="navLinks" >
+      <li ><a href="#">Contact</a></li>
+      <li><a href="#">About</a></li>
+        <li><a href="subpage.html">SUBPAGE</a></li>
+      <li><a href="#">Home</a></li>
+    </ul>
+
+
+<div class = "pheader">
+   <img id="pheader" src="BedTime%20Production1.png">
+</div>
+
+<div class = "title">
+<p>Product List</p>
+</div>
+
+<section class = "grid">
+
+<ul>
+<li class="productlist">
+  <a href="#" title="View product details">
+    <figure>
+     <img src="one.png" alt="Product One"/>
+      <figcaption>
+        <p class = "description">Product One
+        <span class="price">$100.00</span>
+        </p>
+      </figcaption>
+    </figure>
+  </a>
+  </li>
+
+  <li class="productlist">
+  <a href="#" title="View product details">
+    <figure>
+     <img src="two.png" alt="Product Two"/>
+      <figcaption>
+        <p class = "description">Product Two
+        <span class="price">$200.00</span>
+        </p>
+      </figcaption>
+    </figure>
+  </a>
+  </li>
+
+  <li class="productlist">
+  <a href="#" title="View product details">
+    <figure>
+     <img src="three.jpg" alt="Product Three"/>
+      <figcaption>
+        <p class = "description">Product Three
+        <span class="price">$300.00</span>
+        </p>
+      </figcaption>
+    </figure>
+  </a>
+  </li>
+
+  <li class="productlist">
+  <a href="#" title="View product details">
+    <figure>
+     <img src="four.png" alt="Product Four"/>
+      <figcaption>
+        <p class = "description">Product Four
+        <span class="price">$400.00</span>
+        </p>
+      </figcaption>
+    </figure>
+  </a>
+  </li>
+
+  <li class="productlist">
+  <a href="#" title="View product details">
+    <figure>
+     <img src="five.png" alt="Product Five"/>
+      <figcaption>
+        <p class = "description">Product Five
+        <span class="price">$500.00</span>
+        </p>
+      </figcaption>
+    </figure>
+  </a>
+  </li>
+
+  <li class="productlist">
+  <a href="#" title="View product details">
+    <figure>
+     <img src="six.png" alt="Product Six"/>
+      <figcaption>
+        <p class = "description">Product Six
+        <span class="price">$600.00</span>
+        </p>
+      </figcaption>
+    </figure>
+  </a>
+  </li>
+</ul>
+</section>
+
+<footer>
+  <p>Footer</p>
+</footer>
+
+
+
+</body></html>
+
+<!--
+Thumbnail grid created with tutorial:
+http://web.simmons.edu/~grovesd/comm244/demo/thumbnail-grid/instructions.html
+
+Help with getting flexbox to work:
+https://stackoverflow.com/questions/50609726/displayflex-is-not-working
+https://css-tricks.com/forums/topic/flexbox-isnt-work-in-chrome/
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-background
+-->
