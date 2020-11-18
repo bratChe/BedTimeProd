@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html>
-
+<html lang  = "en">
 <head>
 <title>Bedtime Productions</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=0.1">
+
+<title>Moon Effect</title>
 <style type = "text/css">
+
 body{
+
 background-image: url("backgroundStars.PNG");
-background-size: 100%;
+background-size: 50%;
 }
 header {
   background-image: url("header.jpg");
-  padding: 30px;
- text-align: left;
+  padding: 15px;
+  text-align: left;
   font-size: 35px;
   color: white;
 
 }
+
+
 nav {
 
   float:none;
 
-  height: 20px; /* only for demonstration, should be removed */
-  background: black;
-  padding: 55px;
+  height: 7px; /* only for demonstration, should be removed */
+  background: #222222;
+  padding: 30px;
   font-family:'Bookman Old Style',Bookman,'URW Bookman L','Palatino Linotype',serif;
 
 }
@@ -37,24 +44,13 @@ nav {
     {
           float:center;
     }
-#mission_statement{
 
 
-color: white;
-text-align: right;
-font-size: 16pt;
-font-family: "Comic Sans MS", "Comic Sans", cursive;
-}
-#content
-    {
-     display: none;
-     float: none;
-    }
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  padding-bottom: 6px;
+  padding-bottom: 50px;
   overflow: hidden;
 
 }
@@ -65,18 +61,18 @@ li a {
   display: block;
   color: white;
   text-align: center;
-  padding: 0px 20px;
+  padding: 0px 10px;
   text-decoration: none;
     }
  li a:hover:not(.active) {
-  background-color: gray;
+  background-color: #0D3AA9;
 }
 
  section{
 
   opacity: 0.8;
 
-  background-color: darkblue;
+  background-color: #0D3AA9;
   padding: 10%;
   text-align: left;
   color: white;
@@ -87,9 +83,9 @@ li a {
   float: left;
   opacity: 1;
 
-  background-color:black;
-  padding: 12%;
-  color: white;
+  background-color:#222222;
+  padding: 10%;
+  color: #222222;
   text-align: start;
 
   section:after {
@@ -102,28 +98,28 @@ li a {
 
   footer {
 
-  background-color: black;
-  padding: 10px;
+  background-color: #222222;
+  padding: 5px;
   text-align: center;
   color: white;
   opacity: 1;
 }
   .pheader {
     opacity: 0.8;
-    background-color: darkblue;
+    background-color: #0D3AA9;
   }
 .flex-container {
   display: flex;
   opacity: 1;
-  background-color: DodgerBlue;
+  background-color: #0D3AA9;
 }
 
 .flex-container > div {
   background-image: url(backgroundStars.PNG);
-  margin: 10px;
-  padding: 200px;
+  margin: 5px;
+  padding: 200px;   //gray box size
   font-size: 30px;
-   width: 100%;
+   width: 85%;
 
 }
 * {box-sizing: border-box;}
@@ -142,7 +138,7 @@ img {vertical-align: bottom;}
 .text {
   color:white;
   font-size: 30px;
-  padding: 8px 12px;
+  padding: 9px 7px;
   position: absolute;
   bottom: 8px;
   width: 100%;
@@ -170,7 +166,7 @@ img {vertical-align: bottom;}
 }
 
 .active {
-  background-color: #717171;
+  background-color: #222222;
 }
 
 /* Fading animation */
@@ -192,13 +188,13 @@ img {vertical-align: bottom;}
 }
 
 /* On smaller screens, decrease text size */
-@media only screen and (max-width: 500px) {
-  .text {font-size: 40px}
+@media only screen and (max-width: 300px) {
+  .text {font-size: 30px}
 }
 @media (max-width: 500px) {
   nav, article,footer {
     width: 100%;
-    height: auto;
+    height: 1000px;
   }
 
 }
@@ -266,7 +262,8 @@ img {vertical-align: bottom;}
 
   </section>
   <footer>
-  <p>Footer</p>
+  <p>CONNECT WITH US</p>
+
 </footer>
 
 

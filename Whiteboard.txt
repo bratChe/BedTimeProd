@@ -25,3 +25,18 @@ Put your name into the Commit message along with short description what was chan
 (just for knowing whats going on) and click Commit to main
 
 Than righ-click on Fetch/Push and click Push
+LINE--40
+
+#content
+    {
+     display: none;
+     float: none;
+    }
+#mission_statement{
+
+
+color: white;
+text-align: right;
+font-size: 16pt;
+font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
