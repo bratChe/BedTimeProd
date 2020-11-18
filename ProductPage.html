@@ -4,8 +4,11 @@
 <head>
 <title>Bedtime Productions</title>
 <meta name="viewport" content="width=device-width, initial-scale=0.1">
+<script src="Storage.js"></script>
+<link rel="stylesheet" href="StorageStyle.css">
 <style type = "text/css">
 body{
+
 background-image: url("backgroundStars.PNG");
 background-size: 100%;
 }
@@ -20,10 +23,10 @@ header {
 nav {
 
   float:none;
-
-  height: 20px; /* only for demonstration, should be removed */
+  height: 40px; /* only for demonstration, should be removed */
   background: black;
   padding: 25px;
+  font-size: 40px;
 }
  #logo
     {
@@ -76,8 +79,6 @@ li a {
  section{
 
   opacity: 0.8;
-
-  background-color: darkblue;
   padding: 10%;
   text-align: left;
   color: white;
@@ -110,8 +111,8 @@ li a {
   opacity: 1;
 }
   .pheader {
-    opacity: 0.8;
-    background-color: darkblue;
+    opacity: 1;
+
   }
 .grid {
     display: flex;
@@ -122,20 +123,120 @@ li a {
     display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
     display: -ms-flexbox;      /* TWEENER - IE 10 */
     display: -webkit-flex;     /* NEW - Chrome */
+    opacity: 1;
 }
 .productlist {
   width: 50%;
 }
 
 .title{
-  opacity: 0.8;
-  background-color: darkblue;
+  opacity: 1;
+  background-color: grey;
   text-align: center;
   font-size: 50pt;
   color: white;
-  padding: 10px;
+  padding: 5px;
+  width: 100%
 }
 
+body {
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-family: Tahoma, Arial, sans-serif;
+  color: #06D85F;
+  margin: 80px 0;
+}
+
+.box {
+  width: 40%;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.2);
+  padding: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+}
+
+.botton2 {
+  padding: 100px;
+  font-size: 100px;
+}
+
+.button {
+  font-size: 1em;
+  padding: 10px;
+  color: #fff;
+  border: 2px solid #06D85F;
+  border-radius: 20px/50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.button:hover {
+  background: #06D85F;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 200px;
+  background: #fff;
+  border-radius: 5px;
+  width: 80%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 70%;
+  }
+}
 
 }
 </style>
@@ -149,17 +250,63 @@ li a {
     <ul id="navLinks" >
       <li ><a href="#">Contact</a></li>
       <li><a href="#">About</a></li>
-        <li><a href="subpage.html">SUBPAGE</a></li>
+        <li><a href="subpage.html">Hex Color Generator</a></li>
       <li><a href="#">Home</a></li>
     </ul>
 
 
-<div class = "pheader">
-   <img id="pheader" src="BedTime%20Production1.png">
-</div>
+    <div class = "pheader">
+       <img id="pheader" src="BedTime%20Production1.png">
+    </div>
 
 <div class = "title">
 <p>Product List</p>
+</div>
+
+<h1> </h1>
+<div class="box">
+	<a class="button" href="#popup1">Shopping Cart</a>
+</div>
+
+<div id="popup1" class="overlay">
+	<div class="popup">
+		<h2>Shopping Cart Summary</h2>
+		<a class="close" href="#">&times;</a>
+		<div class="content">
+      <p>Insert items and quantity for your shopping cart. </p>
+    	<form name=ShoppingList>
+
+    		<div id="main">
+    			<table>
+    				<tr>
+
+    					<td><b>Item:</b><input type=text name=name></td>
+    					<td><b>Quantity:</b><input type=text name=data></td>
+
+    				</tr>
+
+    				<tr>
+    					<td>
+    					    <input type=button2 value="Save"   onclick="SaveItem()">
+    					    <input type=button2 value="Update" onclick="ModifyItem()">
+    					    <input type=button2 value="Delete" onclick="RemoveItem()">
+                </a>
+    					</td>
+    				</tr>
+    			</table>
+    		</div>
+
+    		<div id="items_table">
+    			<h3>Shopping List</h3>
+    			<table id=list></table>
+    			<p>
+    				<label><input type=button2 value="Clear" onclick="ClearAll()">
+    					<i>* Delete all items</i></label>
+    			</p>
+    		</div>
+    	</form>
+		</div>
+	</div>
 </div>
 
 <section class = "grid">
