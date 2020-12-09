@@ -4,6 +4,7 @@
 <head>
     <title>Bedtime Productions</title>
     <meta name="viewport" content="width=device-width, initial-scale=0.1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="Storage.js"></script>
     <link rel="stylesheet" href="StorageStyle.css">
     <link rel="stylesheet" href="css\foundation.css">
@@ -247,6 +248,89 @@
             }
         }
     }
+    * {
+        box-sizing: border-box;
+    }
+    .row {
+        display: -ms-flexbox;
+        /* IE10 */
+        
+        display: flex;
+        -ms-flex-wrap: wrap;
+        /* IE10 */
+        
+        flex-wrap: wrap;
+        margin: 0 -16px;
+    }
+    .col-25 {
+        -ms-flex: 25%;
+        /* IE10 */
+        
+        flex: 25%;
+    }
+    .col-50 {
+        -ms-flex: 50%;
+        /* IE10 */
+        
+        flex: 50%;
+    }
+    .col-75 {
+        -ms-flex: 75%;
+        /* IE10 */
+        
+        flex: 75%;
+    }
+    .col-25,
+    .col-50,
+    .col-75 {
+        padding: 0 16px;
+    }
+    .container {
+        background-color: #f2f2f2;
+        padding: 5px 20px 15px 20px;
+        border: 1px solid lightgrey;
+        border-radius: 3px;
+    }
+    input[type=text] {
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+    label {
+        margin-bottom: 10px;
+        display: block;
+    }
+    .icon-container {
+        margin-bottom: 20px;
+        padding: 7px 0;
+        font-size: 24px;
+    }
+    .btn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px;
+        margin: 10px 0;
+        border: none;
+        width: 100%;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 17px;
+    }
+    .btn:hover {
+        background-color: #45a049;
+    }
+    a {
+        color: #2196F3;
+    }
+    hr {
+        border: 1px solid lightgrey;
+    }
+    span.price {
+        float: right;
+        color: grey;
+    }
     </style>
 </head>
 
@@ -267,167 +351,76 @@
         <div class="pheader">
             <img id="pheader" src="BedTime%20Production1.png">
         </div>
+        <!--Checkout-->
 
-        <div class="title">
-            <p>Product List</p>
-        </div>
+        <div class="row">
+            <div class="col-75">
+                <div class="container">
+                    <form action="/action_page.php">
 
-        <h1> </h1>
-        <div class="box">
-            <a class="button" href="#popup1">Shopping Cart</a>
-        </div>
-        <br>
-        <br>
-        <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
-            <ul class="orbit-container">
-                <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
-                <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
-                <li class="orbit-slide is-active">
-                    <img src="Slideshow1.png">
-                </li>
-                <li class="orbit-slide">
-                    <img src="slideshow2.png">
-                </li>
+                        <div class="row">
+                            <div class="col-50">
+                                <h3>Billing Address</h3>
+                                <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                                <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+                                <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                                <input type="text" id="email" name="email" placeholder="john@example.com">
+                                <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                                <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+                                <label for="city"><i class="fa fa-institution"></i> City</label>
+                                <input type="text" id="city" name="city" placeholder="New York">
 
-            </ul>
-        </div>
-        <div id="popup1" class="overlay">
-            <div class="popup">
-                <h2>Shopping Cart Summary</h2>
-                <a class="close" href="#">&times;</a>
-                <div class="content">
-                    <p>Insert items and quantity for your shopping cart. </p>
-                    <form name=ShoppingList>
+                                <div class="row">
+                                    <div class="col-50">
+                                        <label for="state">State</label>
+                                        <input type="text" id="state" name="state" placeholder="NY">
+                                    </div>
+                                    <div class="col-50">
+                                        <label for="zip">Zip</label>
+                                        <input type="text" id="zip" name="zip" placeholder="10001">
+                                    </div>
+                                </div>
+                            </div>
 
-                        <div id="main">
-                            <table>
-                                <tr>
+                            <div class="col-50">
+                                <h3>Payment</h3>
+                                <label for="fname">Accepted Cards</label>
+                                <div class="icon-container">
+                                    <i class="fa fa-cc-visa" style="color:navy;"></i>
+                                    <i class="fa fa-cc-amex" style="color:blue;"></i>
+                                    <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                                    <i class="fa fa-cc-discover" style="color:orange;"></i>
+                                </div>
+                                <label for="cname">Name on Card</label>
+                                <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+                                <label for="ccnum">Credit card number</label>
+                                <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                                <label for="expmonth">Exp Month</label>
+                                <input type="text" id="expmonth" name="expmonth" placeholder="September">
+                                <div class="row">
+                                    <div class="col-50">
+                                        <label for="expyear">Exp Year</label>
+                                        <input type="text" id="expyear" name="expyear" placeholder="2018">
+                                    </div>
+                                    <div class="col-50">
+                                        <label for="cvv">CVV</label>
+                                        <input type="text" id="cvv" name="cvv" placeholder="352">
+                                    </div>
+                                </div>
+                            </div>
 
-                                    <td><b>Item:</b><input type=text name=name></td>
-                                    <td><b>Quantity:</b><input type=text name=data></td>
-
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <input type=button2 value="Save" onclick="SaveItem()">
-                                        <input type=button2 value="Update" onclick="ModifyItem()">
-                                        <input type=button2 value="Delete" onclick="RemoveItem()">
-                                        <input type=button2 value="Checkout" onclick="window.location.href='Checkoutpage.html'">
-                                        </a>
-                                    </td>
-                                </tr>
-                            </table>
                         </div>
-
-                        <div id="items_table">
-                            <h3>Shopping List</h3>
-                            <table id=list></table>
-                            <p>
-                                <label><input type=button2 value="Clear" onclick="ClearAll()">
-    					<i>* Delete all items</i></label>
-                            </p>
-                        </div>
+                        <label>
+          <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+        </label>
+                        <input type=button class="btn" value="Make Payment" onclick="window.location.href='CofirmationPage.html'">
                     </form>
                 </div>
             </div>
+
         </div>
 
 
-        <div id="items_table">
-            <h3>Shopping List</h3>
-            <table id=list></table>
-            <p>
-                <label><input type=button2 value="Clear" onclick="ClearAll()">
-          <i>* Delete all items</i></label>
-            </p>
-        </div>
-        </form>
-        </div>
-        </div>
-        </div>
-        <section class="grid">
-
-            <ul>
-                <li class="productlist">
-                    <a href="#" title="View product details">
-                        <figure>
-                            <img src="Moon.png" alt="moon" />
-                            <figcaption>
-                                <p class="description">Product One
-                                    <span class="price">$1099.00</span>
-                                </p>
-                            </figcaption>
-                        </figure>
-                    </a>
-                </li>
-
-                <li class="productlist">
-                    <a href="#" title="View product details">
-                        <figure>
-                            <img src="Star.png" alt="Star" />
-                            <figcaption>
-                                <p class="description">Product Two
-                                    <span class="price">$99.00</span>
-                                </p>
-                            </figcaption>
-                        </figure>
-                    </a>
-                </li>
-
-                <li class="productlist">
-                    <a href="#" title="View product details">
-                        <figure>
-                            <img src="Planet.png" alt="Planet" />
-                            <figcaption>
-                                <p class="description">Product Three
-                                    <span class="price">$300.00</span>
-                                </p>
-                            </figcaption>
-                        </figure>
-                    </a>
-                </li>
-
-                <li class="productlist">
-                    <a href="#" title="View product details">
-                        <figure>
-                            <img src="Rocket.png" alt="Rocket" />
-                            <figcaption>
-                                <p class="description">Product Four
-                                    <span class="price">$400.00</span>
-                                </p>
-                            </figcaption>
-                        </figure>
-                    </a>
-                </li>
-
-                <li class="productlist">
-                    <a href="#" title="View product details">
-                        <figure>
-                            <img src="StarCluster.png" alt="Star Cluster" />
-                            <figcaption>
-                                <p class="description">Product Five
-                                    <span class="price">$500.00</span>
-                                </p>
-                            </figcaption>
-                        </figure>
-                    </a>
-                </li>
-
-                <li class="productlist">
-                    <a href="#" title="View product details">
-                        <figure>
-                            <img src="OwnCreation.png" alt="OwnCreation" />
-                            <figcaption>
-                                <p class="description">Product Six
-                                    <span class="price">$600.00</span>
-                                </p>
-                            </figcaption>
-                        </figure>
-                    </a>
-                </li>
-            </ul>
-        </section>
 
         <footer>
             <p>Footer</p>
@@ -439,6 +432,7 @@
         <script>
             $(document).foundation();
         </script>
+
 </body>
 
 </html>
