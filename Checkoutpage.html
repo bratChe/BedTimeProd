@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bedtime Productions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="Storage.js"></script>
+    <link rel="stylesheet" href="StorageStyle.css">
+    <link rel="stylesheet" href="css\foundation.css">
+    <style type="text/css">
+    body {
+            background-image: url("backgroundStars.PNG");
+            background-size: 100%;
+        }
+        
+        header {
+            background-image: url("header.jpg");
+            padding: 30px;
+            text-align: left;
+            font-size: 35px;
+            color: white;
+        }
+        
+        nav {
+            float: none;
+            height: 40px;
+            /* only for demonstration, should be removed */
+            background: black;
+            padding: 3.5rem;
+            font-size: 40px;
+        }
+        
+        #logo {
+            align-self: flex-start;
+            max-width: 10%;
+            height: auto;
+        }
+        
+        #pheader {
+            float: center;
+        }
+        
+        #mission_statement {
+            color: white;
+            text-align: center;
+            font-size: 16pt;
+        }
+        
+        #content {
+            display: block;
+            float: none;
+        }
+        
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            padding-bottom: 6px;
+            overflow: hidden;
+        }
+        
+        li {
+            float: right;
+        }
+        
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 0px 20px;
+            text-decoration: none;
+        }
+        
+        li a:hover:not(.active) {
+            background-color: gray;
+        }
+        
+        .productlist {
+            float: left;
+        }
+        
+        section {
+            opacity: 0.8;
+            padding: 10%;
+            text-align: left;
+            color: white;
+        }
+        
+        article {
+            text-align: left;
+            float: left;
+            opacity: 1;
+            background-color: black;
+            padding: 12%;
+            color: white;
+            text-align: start;
+            section:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+        }
+        
+        footer {
+            background-color: black;
+            padding: 10px;
+            text-align: center;
+            color: white;
+            opacity: 1;
+        }
+        
+        .pheader {
+            opacity: 1;
+        }
+        
+        .grid {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: left;
+            display: -webkit-box;
+            /* OLD - iOS 6-, Safari 3.1-6 */
+            display: -moz-box;
+            /* OLD - Firefox 19- (buggy but mostly works) */
+            display: -ms-flexbox;
+            /* TWEENER - IE 10 */
+            display: -webkit-flex;
+            /* NEW - Chrome */
+            opacity: 1;
+        }
+        
+        .productlist {
+            width: 50%;
+        }
+        
+        .title {
+            opacity: 1;
+            background-color: grey;
+            text-align: center;
+            font-size: 50pt;
+            color: white;
+            padding: 5px;
+            width: 100%
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        h1 {
+            text-align: center;
+            font-family: Tahoma, Arial, sans-serif;
+            color: #06D85F;
+            margin: 80px 0;
+        }
+        
+        .box {
+            width: 40%;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 35px;
+            border: 2px solid #fff;
+            border-radius: 20px/50px;
+            background-clip: padding-box;
+            text-align: center;
+        }
+        
+        .botton2 {
+            padding: 100px;
+            font-size: 100px;
+        }
+        
+        .button {
+            font-size: 1em;
+            padding: 10px;
+            color: #fff;
+            border: 2px solid #06D85F;
+            border-radius: 20px/50px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease-out;
+        }
+        
+        .button:hover {
+            background: #06D85F;
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            transition: opacity 500ms;
+            visibility: hidden;
+            opacity: 0;
+        }
+        
+        .overlay:target {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .popup {
+            margin: 70px auto;
+            padding: 200px;
+            background: #fff;
+            border-radius: 5px;
+            width: 80%;
+            position: relative;
+            transition: all 5s ease-in-out;
+        }
+        
+        .popup h2 {
+            margin-top: 0;
+            color: #333;
+            font-family: Tahoma, Arial, sans-serif;
+        }
+        
+        .popup .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            transition: all 200ms;
+            font-size: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #333;
+        }
+        
+        .popup .close:hover {
+            color: #06D85F;
+        }
+        
+        .popup .content {
+            max-height: 30%;
+            overflow: auto;
+        }
+        
+        @media screen and (max-width: 700px) {
+            .box {
+                width: 70%;
+            }
+            .popup {
+                width: 70%;
+            }
+        }
+    }
+    * {
+        box-sizing: border-box;
+    }
+    .row {
+        display: -ms-flexbox;
+        /* IE10 */
+        
+        display: flex;
+        -ms-flex-wrap: wrap;
+        /* IE10 */
+        
+        flex-wrap: wrap;
+        margin: 0 -16px;
+    }
+    .col-25 {
+        -ms-flex: 25%;
+        /* IE10 */
+        
+        flex: 25%;
+    }
+    .col-50 {
+        -ms-flex: 50%;
+        /* IE10 */
+        
+        flex: 50%;
+    }
+    .col-75 {
+        -ms-flex: 75%;
+        /* IE10 */
+        
+        flex: 75%;
+    }
+    .col-25,
+    .col-50,
+    .col-75 {
+        padding: 0 16px;
+    }
+    .container {
+        background-color: #f2f2f2;
+        padding: 5px 20px 15px 20px;
+        border: 1px solid lightgrey;
+        border-radius: 3px;
+    }
+    input[type=text] {
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+    label {
+        margin-bottom: 10px;
+        display: block;
+    }
+    .icon-container {
+        margin-bottom: 20px;
+        padding: 7px 0;
+        font-size: 24px;
+    }
+    .btn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px;
+        margin: 10px 0;
+        border: none;
+        width: 100%;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 17px;
+    }
+    .btn:hover {
+        background-color: #45a049;
+    }
+    a {
+        color: #2196F3;
+    }
+    hr {
+        border: 1px solid lightgrey;
+    }
+    span.price {
+        float: right;
+        color: grey;
+    }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img id="logo" src="Logo1.1.png">
+
+    </header>
+    <nav>
+        <ul id="navLinks">
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="subpage.html">Hex Color Generator</a></li>
+            <li><a href="#">Home</a></li>
+        </ul>
+
+
+        <div class="pheader">
+            <img id="pheader" src="BedTime%20Production1.png">
+        </div>
+        <!--Checkout-->
+
+        <div class="row">
+            <div class="col-75">
+                <div class="container">
+                    <form action="/action_page.php">
+
+                        <div class="row">
+                            <div class="col-50">
+                                <h3>Billing Address</h3>
+                                <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                                <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+                                <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                                <input type="text" id="email" name="email" placeholder="john@example.com">
+                                <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                                <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+                                <label for="city"><i class="fa fa-institution"></i> City</label>
+                                <input type="text" id="city" name="city" placeholder="New York">
+
+                                <div class="row">
+                                    <div class="col-50">
+                                        <label for="state">State</label>
+                                        <input type="text" id="state" name="state" placeholder="NY">
+                                    </div>
+                                    <div class="col-50">
+                                        <label for="zip">Zip</label>
+                                        <input type="text" id="zip" name="zip" placeholder="10001">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-50">
+                                <h3>Payment</h3>
+                                <label for="fname">Accepted Cards</label>
+                                <div class="icon-container">
+                                    <i class="fa fa-cc-visa" style="color:navy;"></i>
+                                    <i class="fa fa-cc-amex" style="color:blue;"></i>
+                                    <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                                    <i class="fa fa-cc-discover" style="color:orange;"></i>
+                                </div>
+                                <label for="cname">Name on Card</label>
+                                <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+                                <label for="ccnum">Credit card number</label>
+                                <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                                <label for="expmonth">Exp Month</label>
+                                <input type="text" id="expmonth" name="expmonth" placeholder="September">
+                                <div class="row">
+                                    <div class="col-50">
+                                        <label for="expyear">Exp Year</label>
+                                        <input type="text" id="expyear" name="expyear" placeholder="2018">
+                                    </div>
+                                    <div class="col-50">
+                                        <label for="cvv">CVV</label>
+                                        <input type="text" id="cvv" name="cvv" placeholder="352">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <label>
+          <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+        </label>
+                        <input type=button class="btn" value="Make Payment" onclick="window.location.href='CofirmationPage.html'">
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <footer>
+            <p>Footer</p>
+        </footer>
+
+
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+        <script>
+            $(document).foundation();
+        </script>
+
+</body>
+
+</html>
+
+<!--
+Thumbnail grid created with tutorial:
+http://web.simmons.edu/~grovesd/comm244/demo/thumbnail-grid/instructions.html
+
+Help with getting flexbox to work:
+https://stackoverflow.com/questions/50609726/displayflex-is-not-working
+https://css-tricks.com/forums/topic/flexbox-isnt-work-in-chrome/
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-background
+-->
