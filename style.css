@@ -9,7 +9,7 @@ body {
 }
 
 .contact-section{
-  background-color: darkblue;
+  background-color: #20283a;
   background-size: cover;
   padding 40px 0;
 }
@@ -21,7 +21,7 @@ body {
 .border{
   width: 100px;
   height: 10px;
-  background: #34495e;
+  background: white;
   margin: 40px auto;
 }
 
@@ -57,7 +57,7 @@ textarea.contact-form-text{
 .contact-form-btn{
   float: right;
   border: 0;
-  background: #34495e;
+  background: gray;
   color: #fff;
   padding: 12px 50px;
   border-radius: 20px;
@@ -66,5 +66,5 @@ textarea.contact-form-text{
 
 }
 .contact-form-btn:hover{
-  background: #2980b9;
+  background: darkblue;
 }
